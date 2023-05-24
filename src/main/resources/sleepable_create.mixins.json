@@ -5,6 +5,7 @@
   "refmap": "sleepable_create.refmap.json",
   "mixins": [
     "PlayerMixin",
+    "PlayerListMixin",
     "ServerPlayerMixin"
   ],
   "injectors": {

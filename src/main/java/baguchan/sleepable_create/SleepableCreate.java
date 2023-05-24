@@ -1,6 +1,7 @@
 package baguchan.sleepable_create;
 
 import com.simibubi.create.AllInteractionBehaviours;
+import com.simibubi.create.AllMovementBehaviours;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,8 @@ public class SleepableCreate
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        AllMovementBehaviours.registerBehaviour(Blocks.RESPAWN_ANCHOR, new AnchorInteractionBehaviour());
+        AllInteractionBehaviours.registerBehaviour(Blocks.RESPAWN_ANCHOR, new AnchorInteractionBehaviour());
         AllInteractionBehaviours.registerBehaviour(Blocks.RED_BED, new SleepableInteractionBehaviour());
         AllInteractionBehaviours.registerBehaviour(Blocks.BLACK_BED, new SleepableInteractionBehaviour());
         AllInteractionBehaviours.registerBehaviour(Blocks.BLUE_BED, new SleepableInteractionBehaviour());

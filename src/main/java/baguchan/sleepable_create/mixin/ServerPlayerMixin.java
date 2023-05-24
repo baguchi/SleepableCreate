@@ -59,7 +59,7 @@ public abstract class ServerPlayerMixin extends Player implements IHasStaticResp
 
             serverPlayer.respawnDimension = getStaticRespawn().level.dimension();
             serverPlayer.respawnForced = true;
-            serverPlayer.respawnPosition = getStaticRespawn().blockPosition();
+            serverPlayer.respawnPosition = getStaticRespawn().blockPosition().offset(getStaticLocalPos()).above();
 
             this.prevRespawnDimension = serverPlayer.respawnDimension;
             this.prevRespawnPosition = serverPlayer.respawnPosition;
